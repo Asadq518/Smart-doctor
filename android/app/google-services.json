@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "394888715573",
+    "project_id": "deseaseprediction",
+    "storage_bucket": "deseaseprediction.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394888715573:android:5ec6e5ff0be77c25ae807c",
+        "android_client_info": {
+          "package_name": "com.devitcity.disease_prediction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394888715573-roqkbikcnmfnirc888jlnm0un2okcorg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWXV23Jpx0e66buibd8JbutQlFcbK6Tko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394888715573-roqkbikcnmfnirc888jlnm0un2okcorg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
