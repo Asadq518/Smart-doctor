@@ -15,8 +15,11 @@ class RequirementsController extends GetxController {
 
   var select = false.obs;
   var selectButton = false.obs;
+  
   var email = ''.obs;
   var name = ''.obs;
+  var age = ''.obs;
+  var gender = ''.obs;
 
 final storage =  FlutterSecureStorage();
 
@@ -25,6 +28,8 @@ final storage =  FlutterSecureStorage();
     super.onInit();
     await storage.read(key: 'email').then((value) => email.value=value!);
     await storage.read(key: 'name').then((value) => name.value=value!);
+    await storage.read(key: 'age').then((value) => age.value=value!);
+    await storage.read(key: 'gender').then((value) => gender.value=value!);
   }
 
   @override

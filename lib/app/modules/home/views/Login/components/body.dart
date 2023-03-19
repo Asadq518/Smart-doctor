@@ -126,6 +126,11 @@ class LoginBody extends GetView<HomeController> {
                               value: values['password'].toString());
                           await controller.storage.write(
                               key: 'email', value: values['email'].toString());
+                          await controller.storage.write(
+                              key: 'age', value: values['age'].toString());
+                          await controller.storage.write(
+                              key: 'gender', value: values['gender'].toString());
+
                           Get.offAll(const RequirementsView());
                         }
                       }

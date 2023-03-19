@@ -1,4 +1,6 @@
 // ignore_for_file: unused_import
+import 'package:disease_prediction/app/modules/home/views/home_view.dart';
+import 'package:disease_prediction/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../utils/contants.dart';
@@ -9,6 +11,7 @@ class RequirementsView extends GetView<RequirementsController> {
   const RequirementsView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    Get.put(RequirementsController());
     return Scaffold(
       drawer: Drawer(
         // backgroundColor: Colours.kPrimaryColor,
@@ -37,53 +40,38 @@ class RequirementsView extends GetView<RequirementsController> {
                 ), //circleAvatar
               ), //UserAccountDrawerHeader
             ), //DrawerHeader
-            // ListTile(
-            //   leading: Icon(Icons.person),
-            //   title: Text(' My Profile '),
-            //   onTap: () {
-            //     // Navigator.pop(context);
-            //   },
-            // ),
-            // ListTile(
-            //   leading: Icon(Icons.book),
-            //   title: Text(' My Course '),
-            //   onTap: () {
-            //     Navigator.pop(context);
-            //   },
-            // ),
-            // ListTile(
-            //   leading: Icon(Icons.workspace_premium),
-            //   title: Text(' Go Premium '),
-            //   onTap: () {
-            //     Navigator.pop(context);
-            //   },
-            // ),
-            // ListTile(
-            //   leading: Icon(Icons.video_label),
-            //   title: Text(' Saved Videos '),
-            //   onTap: () {
-            //     Navigator.pop(context);
-            //   },
-            // ),
-            // ListTile(
-            //   leading: Icon(Icons.edit),
-            //   title: Text(' Edit Profile '),
-            //   onTap: () {
-            //     Navigator.pop(context);
-            //   },
-            // ),
-            // ListTile(
-            //   leading: Icon(Icons.logout),
-            //   title: Text('LogOut'),
-            //   onTap: () {
-            //     Navigator.pop(context);
-            //   },
-            // ),
+            ListTile(
+              leading: const Icon(Icons.leaderboard),
+              title: Obx(() => Text(' My Age : ${controller.age} ')),
+              onTap: () {
+                // Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: Obx(() => Text('My Gender : ${controller.gender} ')),
+              onTap: () {
+                // Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: const Text('Logout'),
+              onTap: () async {
+                await controller.storage.delete(key: 'key');
+                Get.offNamed(Routes.HOME);
+                // Navigator.pop(context);
+              },
+            ),
           ],
         ),
       ),
       appBar: AppBar(
-        title: const Text('Requirements'),
+        title: const CircleAvatar(
+          backgroundColor: Colors.white24,
+          backgroundImage: AssetImage('assets/images/logo.png'),
+        ),
+        centerTitle: true,
       ),
       body: SafeArea(child: RequirementsBody()),
     );
