@@ -19,15 +19,15 @@ dependencies:
   flutter_secure_storage: ^7.0.1
   radio_grouped_buttons: ^1.0.1
   http: 0.13.5
+  flutter_rating_bar: 4.0.1
   flutter: 
     sdk: flutter
 
 dev_dependencies: 
   flutter_lints: 2.0.1
+  flutter_native_splash: ^2.2.19
   flutter_test: 
     sdk: flutter
-
-  flutter_native_splash: ^2.2.19
 
 flutter: 
   assets: 
@@ -35,6 +35,7 @@ flutter:
     - assets/icons/
   uses-material-design: true
 
-flutter_native_splash:
-  color: "#ffffff"
+flutter_native_splash: 
+  color: '#ffffff'
   image: assets/images/logo.png
+

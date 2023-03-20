@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "394888715573",
-    "project_id": "deseaseprediction",
-    "storage_bucket": "deseaseprediction.appspot.com"
+    "project_number": "61142556114",
+    "firebase_url": "https://desease-prediction-b7f59-default-rtdb.firebaseio.com",
+    "project_id": "desease-prediction-b7f59",
+    "storage_bucket": "desease-prediction-b7f59.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:394888715573:android:5ec6e5ff0be77c25ae807c",
+        "mobilesdk_app_id": "1:61142556114:android:94929c809c60fea0943c0b",
         "android_client_info": {
           "package_name": "com.devitcity.disease_prediction"
         }
       },
       "oauth_client": [
         {
-          "client_id": "394888715573-roqkbikcnmfnirc888jlnm0un2okcorg.apps.googleusercontent.com",
+          "client_id": "61142556114-s96qb8vncfkmr1jl4npguda1ms0lfo1o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAWXV23Jpx0e66buibd8JbutQlFcbK6Tko"
+          "current_key": "AIzaSyDsVLBQ4WunDXnSPp7HKdtIB7VLU7wnzd0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "394888715573-roqkbikcnmfnirc888jlnm0un2okcorg.apps.googleusercontent.com",
+              "client_id": "61142556114-s96qb8vncfkmr1jl4npguda1ms0lfo1o.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "61142556114-geuscb68qk4rh1cd5p2p66ever7tvkt8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.devitcity.diseasePrediction"
+              }
             }
           ]
         }

@@ -102,6 +102,7 @@ import 'package:disease_prediction/app/modules/dashboard/controllers/dashboard_c
 import 'package:disease_prediction/app/utils/contants.dart';
 import 'package:disease_prediction/components/rounded_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 
 class SelectSymptomsView extends GetView<DashboardController> {
@@ -282,6 +283,142 @@ class PredictionView extends GetView<DashboardController> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class PossibleCondition extends GetView<DashboardController> {
+  const PossibleCondition({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text(
+          "Possible Conditions",
+          style: TextStyle(
+              color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
+        ),
+        leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black54,
+            )),
+      ),
+      body: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: const [
+              Text(
+                "Understanding Your Results",
+                style: TextStyle(
+                    color: Colours.kPrimaryColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Icon(
+                Icons.info_outline,
+                color: Colours.kPrimaryColor,
+              ),
+            ],
+          ),
+        ),
+        ListTile(
+            onTap: () {
+              // Get.to(const PredictionView());
+              Get.off(() => const PredictionView(), arguments: Get.arguments);
+            },
+            tileColor: Colors.white,
+            title: const Text(
+              "Allergy",
+              style: TextStyle(color: Colors.black),
+            ),
+            trailing: RatingBar.builder(
+              initialRating: 1,
+              minRating: 0.5,
+              itemSize: 15,
+              direction: Axis.horizontal,
+              allowHalfRating: true,
+              itemCount: 4,
+              itemBuilder: (context, _) => const Icon(
+                Icons.rectangle_rounded,
+                color: Colors.blue,
+              ),
+              onRatingUpdate: (rating) {
+                print(rating);
+              },
+            )),
+        const SizedBox(
+          height: 5,
+        ),
+        ListTile(
+            onTap: () =>
+                Get.off(() => const PredictionView(), arguments: Get.arguments),
+            tileColor: Colors.white,
+            title: const Text(
+              "Diphtheria",
+              style: TextStyle(color: Colors.black),
+            ),
+            trailing: RatingBar.builder(
+              initialRating: 1,
+              minRating: 0.5,
+              itemSize: 15,
+              direction: Axis.horizontal,
+              allowHalfRating: true,
+              itemCount: 4,
+              itemBuilder: (context, _) => const Icon(
+                Icons.rectangle_rounded,
+                color: Colors.blue,
+              ),
+              onRatingUpdate: (rating) {
+                print(rating);
+              },
+            )),
+        const SizedBox(
+          height: 5,
+        ),
+        ListTile(
+            onTap: () =>
+                Get.off(() => const PredictionView(), arguments: Get.arguments),
+            tileColor: Colors.white,
+            title: const Text(
+              "Infection/HIV",
+              style: TextStyle(color: Colors.black),
+            ),
+            trailing: RatingBar.builder(
+              initialRating: 1,
+              minRating: 0.5,
+              itemSize: 15,
+              direction: Axis.horizontal,
+              allowHalfRating: true,
+              itemCount: 4,
+              itemBuilder: (context, _) => const Icon(
+                Icons.rectangle_rounded,
+                color: Colors.blue,
+              ),
+              onRatingUpdate: (rating) {
+                print(rating);
+              },
+            )),
+        const SizedBox(
+          height: 10,
+        ),
+        const Text(
+          "Load 10 More Conditions",
+          style: TextStyle(
+              color: Colours.kPrimaryColor, fontWeight: FontWeight.w500),
+        )
+      ]),
     );
   }
 }

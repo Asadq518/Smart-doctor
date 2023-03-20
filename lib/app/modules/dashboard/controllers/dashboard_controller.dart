@@ -133,7 +133,8 @@ class DashboardController extends GetxController {
       progress.value = false;
       var data = jsonDecode(response.body.toString());
       print(data);
-      Get.off(() => const PredictionView(), arguments: data);
+      // 
+      Get.off(() => const PossibleCondition(), arguments: data);
       // print(data);
     } else {
       progress.value = false;
