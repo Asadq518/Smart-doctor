@@ -109,7 +109,7 @@ class DashboardController extends GetxController {
     progress.value = true;
     BodyPartSelected.value = s;
     var response = await http.get(
-        Uri.parse("https://doctorq518.pythonanywhere.com/getSymptoms?body=$s"));
+        Uri.parse("https://flask111.pythonanywhere.com/getSymptoms?body=$s"));
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body.toString());
       progress.value = false;
@@ -128,7 +128,7 @@ class DashboardController extends GetxController {
 
     print(symptoms);
     var response = await http.get(Uri.parse(
-        "http://doctorq518.pythonanywhere.com/getDisease?body=$body&symptom=$symptoms"));
+        "http://flask111.pythonanywhere.com/getDisease?body=$body&symptom=$symptoms"));
     if (response.statusCode == 200) {
       progress.value = false;
       var data = jsonDecode(response.body.toString());
