@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
 import 'Welcome/components/body.dart';
 
-
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
 

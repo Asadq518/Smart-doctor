@@ -7,6 +7,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 
 import '../../requirements/views/requirements_view.dart';
+// import 'dart:async';
 
 class HomeController extends GetxController {
   TextEditingController emailController = TextEditingController();
@@ -16,13 +17,18 @@ class HomeController extends GetxController {
   TextEditingController ageController = TextEditingController();
   TextEditingController genderController = TextEditingController();
   final storage = const FlutterSecureStorage();
+
   @override
   Future<void> onInit() async {
-    // TODO: implement onInit
     super.onInit();
-    String? value = await storage.read(key: "key");
-    if (value != null) {
-      Get.offNamed(Routes.REQUIREMENTS);
-    }
+    // timerMethod();
+ 
   }
+
+  // var timer = false.obs;
+  // Future<void> timerMethod() async {
+  //   await Future.delayed(const Duration(milliseconds: 200), () {
+  //     timer.value = true;
+  //   });
+  // }
 }

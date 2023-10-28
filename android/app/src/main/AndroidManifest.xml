@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.devitcity.disease_prediction">
+
    <application
         android:label="Smart Doctor"
         android:name="${applicationName}"

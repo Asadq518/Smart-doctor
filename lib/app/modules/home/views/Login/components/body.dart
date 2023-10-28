@@ -106,7 +106,11 @@ class LoginBody extends GetView<HomeController> {
                 text: 'LOGIN',
                 press: () async {
                   if (formKey.currentState!.validate()) {
+                    print('wow123 valid');
+
                     await databaseReference.once().then((value) async {
+                      print('wow123 call');
+
                       for (var e in value.snapshot.children) {
                         Map<dynamic, dynamic>? values = e.value as Map?;
                         // print();
@@ -129,12 +133,15 @@ class LoginBody extends GetView<HomeController> {
                           await controller.storage.write(
                               key: 'age', value: values['age'].toString());
                           await controller.storage.write(
-                              key: 'gender', value: values['gender'].toString());
+                              key: 'gender',
+                              value: values['gender'].toString());
 
                           Get.offAll(const RequirementsView());
                         }
                       }
                       // print('Data : ${value.snapshot.children.f}');
+                    }).onError((error, stackTrace) {
+                      print(error);
                     });
                     String? value = await controller.storage.read(key: "key");
                     if (value == null) {
